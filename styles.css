@@ -98,6 +98,7 @@ main {
 .container .event-heart {
     color: white;
     font-size: 2rem;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -112,7 +113,13 @@ main {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1rem;
+    gap: 0.7rem;
+}
+
+.container .event-lote {
+    font-size: 1rem;
+    margin-left: 30px;
+    margin-top: -10px;
 }
 
 .countdown {
@@ -170,7 +177,11 @@ footer {
     }
 
     .container {
-        margin-top: -20px;
+        margin-top: -30px;
+    }
+
+    .container .event-welcome {
+        margin-bottom: 30px;
     }
 
     .container h2 {
@@ -188,6 +199,10 @@ footer {
 
     .container p {
         font-size: 0.8rem;
+    }
+
+    .container .event-lote {
+        font-size: 0.6rem;
     }
 
     .break {
