@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;    
+}
+
+body {    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    font-family: 'Nova Square', sans-serif;    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Translucente */
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.logo-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo-header img {
+    height: 3.5rem;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: start;
+    margin-left: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.inscricao a,
+.inscricao-quero a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Nova Square', sans-serif;  
+    font-size: 1.2rem;
+}
+
+.inscricao button,
+.inscricao-quero button {
+    background-color: #FF9900;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;    
+}
+
+main {
+    background-image: url('/img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px; /* Para não ficar escondido atrás do header */
+}
+
+.logo-central {
+    width: 14rem;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Nova Square', sans-serif;  
+}
+
+.container p {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.container .event-heart {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.container .event-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .event-infor {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.countdown span {
+    font-family: 'Squada One', sans-serif;
+}
+
+.time-box {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    width: 100px;
+}
+
+.time-box p {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.time-box span {
+    font-size: 2rem;
+    display: block;
+    font-weight: bold;
+    font-family: 'Squada One', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .logo-central {
+        width: 8rem;
+        margin-bottom: 10px;
+    }
+
+    .countdown {
+        font-size: 1.5rem;
+        margin-bottom: 50px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    .container {
+        margin-top: -20px;
+    }
+
+    .container h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .container .event-heart {
+        font-size: 1.2rem;
+    }
+
+    .container .event-infor {
+        gap: 0.5rem;
+    }
+
+    .container p {
+        font-size: 0.8rem;
+    }
+
+    .break {
+        display: block;
+    }
+
+    .time-box {
+        padding: 10px;
+        width: 70px;
+    }
+}
