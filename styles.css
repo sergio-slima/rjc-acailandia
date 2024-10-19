@@ -122,6 +122,10 @@ main {
     margin-top: -10px;
 }
 
+.container .event-infor .old {
+    color: gray;
+}
+
 .countdown {
     display: flex;
     justify-content: center;
@@ -152,6 +156,10 @@ main {
     display: block;
     font-weight: bold;
     font-family: 'Squada One', sans-serif;
+}
+
+.inscricao-quero {
+    margin-bottom: 20px;
 }
 
 footer {

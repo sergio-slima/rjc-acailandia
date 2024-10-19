@@ -1,6 +1,6 @@
 // Definir a data do evento
 const eventDate = new Date("Dec 06, 2024 19:30:00").getTime();
-const subscribeDate = new Date("Oct 16, 2024 23:59:59").getTime();
+const subscribeDate = new Date("Nov 20, 2024 23:59:59").getTime();
 
 const countdown = setInterval(() => {
     const now = new Date().getTime();
