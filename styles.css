@@ -1,3 +1,15 @@
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #075ead;
+    --secondary-color: #029b48;
+    --accent-color: #FF9900;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,10 +29,15 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Translucente */
+    background-color: rgba(0, 0, 0, 0); /* Inicialmente transparente */
     position: fixed;
     width: 100%;
     top: 0;
+    transition: background-color 0.3s ease; /* Suaviza a transição */
+}
+
+header.scrolled {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparência de 50% ao rolar */
 }
 
 .logo-header {
@@ -29,7 +46,7 @@ header {
 }
 
 .logo-header img {
-    height: 3.5rem;
+    height: 4rem;
 }
 
 .logo-content {
@@ -38,14 +55,14 @@ header {
     justify-content: center;
     align-items: start;
     margin-left: 0.5rem;
-    color: white;
+    color: var(--white-color);
     font-size: 1.2rem;
 }
 
 .inscricao a,
 .inscricao-quero a {
     text-decoration: none;
-    color: white;
+    color: var(--white-color);
     font-family: 'Nova Square', sans-serif;  
     font-size: 1.2rem;
 }
@@ -53,7 +70,7 @@ header {
 .inscricao button,
 .inscricao-quero button {
     background-color: #FF9900;
-    color: white;
+    color: var(--white-color);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -62,7 +79,7 @@ header {
 }
 
 main {
-    background-image: url('/img/fundo.png');
+    background-image: url('/img/background2.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -77,26 +94,27 @@ main {
 }
 
 .logo-central {
-    width: 14rem;
-    margin-bottom: 20px;
+    width: 16rem;
+    /* margin-bottom: 20px; */
 }
 
 .container h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: white;
+    color: var(--white-color);
     margin-top: 20px;
     margin-bottom: 20px;
     font-family: 'Nova Square', sans-serif;  
 }
 
 .container p {
-    color: white;
+    color: var(--white-color);
     font-size: 1.2rem;
 }
 
-.container .event-heart {
-    color: white;
+.container .event-heart,
+.container .event-date {
+    color: var(--white-color);
     font-size: 2rem;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -123,14 +141,22 @@ main {
 }
 
 .container .event-infor .old {
-    color: gray;
+    color: --black-color;
+}
+
+.container .event-infor hr {
+    width: 90%;
+    margin: 2px auto;
+    border: none;
+    border-top: 1px dotted white;
+    color: var(--white-color);
 }
 
 .countdown {
     display: flex;
     justify-content: center;
     gap: 20px;
-    color: white;
+    color: var(--white-color);
     margin-bottom: 20px;
 }
 
@@ -164,9 +190,27 @@ main {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    color: var(--white-color);
+    position: relative; /* Necessário para posicionamento absoluto do botão */
+}
+
+footer #scrollToTopButton {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    padding: 5px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer #scrollToTopButton:hover {
+    background-color: var(--secondary-color);
 }
 
 @media (max-width: 768px) {
@@ -184,10 +228,6 @@ footer {
         padding: 10px;
     }
 
-    .container {
-        margin-top: -30px;
-    }
-
     .container .event-welcome {
         margin-bottom: 30px;
     }
@@ -197,7 +237,8 @@ footer {
         font-size: 1.5rem;
     }
 
-    .container .event-heart {
+    .container .event-heart,
+    .container .event-date {
         font-size: 1.2rem;
     }
 
@@ -221,4 +262,52 @@ footer {
         padding: 10px;
         width: 70px;
     }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animated-pulse {
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+.animated-bounce {
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+.animated-rotate {
+    display: inline-block;
+    animation: rotate 2s infinite;
 }

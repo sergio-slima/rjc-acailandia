@@ -1,6 +1,6 @@
 // Definir a data do evento
-const eventDate = new Date("Dec 06, 2024 19:30:00").getTime();
-const subscribeDate = new Date("Nov 20, 2024 23:59:59").getTime();
+const eventDate = new Date("May 23, 2025 19:30:00").getTime();
+const subscribeDate = new Date("Mar 10, 2025 23:59:59").getTime();
 
 const countdown = setInterval(() => {
     const now = new Date().getTime();
@@ -28,3 +28,25 @@ const countdown = setInterval(() => {
 function inscrever() {
     alert("Inscrição realizada com sucesso!");
 }
+
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+document.getElementById('scrollButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Previne o comportamento padrão do botão
+    document.getElementById('targetSection').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('scrollToTopButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Previne o comportamento padrão do botão
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
